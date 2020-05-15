@@ -1,5 +1,7 @@
 body{
-    margin: 2rem 10rem;
+    min-width: 100vw;
+    min-height: fit-content;
+    margin: 2rem 3rem;
 }
 
 h1{
