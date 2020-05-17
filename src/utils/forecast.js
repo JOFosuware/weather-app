@@ -6,9 +6,26 @@ const forecast = (address, callback) => {
         if(error){
             callback('Unable to connect to weather service', undefined)
         }else if(body.error)
-            callback('Unable to fetch weather conditions')
+            callback('Unable to fetch weather conditions', undefined)
         else{
-            callback(undefined,  body.current.temperature)
+            callback(undefined,  {
+                location: "Area Details",
+                city: body.location.name,
+                region: body.location.region,
+                country: body.location.country,
+                conditions: "Area Weather Conditions",
+                time: body.current.observation_time,
+                weatherDes: body.current.weather_descriptions,
+                temperature: body.current.temperature,
+                windSpeed: body.current.wind_speed,
+                pressure: body.current.pressure,
+                humidity: body.current.humidity,
+                visibility: body.current.visibility,
+                is_day: body.current.is_day
+
+
+
+            })
         }
     })
 }

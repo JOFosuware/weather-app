@@ -50,15 +50,28 @@ app.get('/weather', (req, res) => {
 
         if(error){
             res.send({
-                error: error
+                error
             })
         }else{
-            res.send({
-                Temperature: data,
-                Location: req.query.address
-    
-            })
-        }
+            
+                res.send({
+                    location: data.location,
+                    city:data.city,
+                    region: data.region,
+                    country: data.country,
+                    conditions: data.conditions,
+                    time: data.time,
+                    weatherDes: data.weatherDes,
+                    temperature: data.temperature,
+                    windSpeed: data.windSpeed,
+                    pressure: data.pressure,
+                    humidity: data.humidity,
+                    visibility: data.visibility,
+                    is_day: data.is_day
+        
+                })
+            }
+        
         
         }
     )
