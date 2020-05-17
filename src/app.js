@@ -21,7 +21,7 @@ app.use(express.static(publicPath))
 
 app.get('',(req, res) => {
     res.render('index',{
-        title: "Weather App",
+        title: "WEATHER APP",
         name: "Jofosuware"
     })
 })
@@ -50,7 +50,7 @@ app.get('/weather', (req, res) => {
 
         if(error){
             res.send({
-                error: "Enter correct address"
+                error: error
             })
         }else{
             res.send({

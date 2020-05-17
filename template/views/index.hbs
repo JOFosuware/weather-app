@@ -5,23 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/img/weather.png" type="image/x-icon">
     <title>Weather</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/styles.css">
     
 </head>
 <body>
-    {{>header}}
-    <p>Search a location for weather conditions</p>
+    <div class="row">
+        <div class="col-8 m-auto">
+            {{>header}}
+            <p class="mt-4">Search a location for weather conditions</p>
 
-    <form action="">
-        <input type="text" placeholder="Location">
-        <button>Search</button>
-    </form>
+            <form>
+                <div class="form-row">
+                    <input type="text" placeholder="Location" class="form-control col-8 m-1">
+                    <button class="btn btn-outline-dark col-3 btn-sm">Search</button>
+                </div>
+                
+            </form>
 
-    <p id="message-1"></p>
-    <p id="message-2"></p>
+            <div class="card mt-4 col-8">
+                <div class="card-body text-success">
+                    <p id="message-1"></p>
+                    <p id="message-2"></p>
+                </div>
+            </div>
 
-    {{>footer}}
+            {{>footer}}
+        </div>
+    </div>
 
+    <script src="/js/jquery-3.3.1.js"></script>
+    <script src="/js/bootstrap.js"></script>
     <script src="/js/app.js"></script>
 </body>
 </html>
